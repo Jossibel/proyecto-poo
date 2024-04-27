@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Ejercicio_01 {
+
+    public stati Scnner obtenerScanner() {
+        return new Scanner(System.in);
+    }
+
+    public static int obtenerNumero(String menaje) {
+        System.out.println(mensaje);
+        return obtenerScanner().nextInt();
+    }
+
+    public static String realizarOperaciones(int numUno, int numDos) {
+        String resFinal = "";
+        int resSuma = numUno + numDos; // Suma
+        int resRest = nuUno - numDos; // Resta
+        int resMult = numUno * numDos; // Multiplicación
+        double resDivi = 0;
+
+        // Validar división por cero
+        if (numDos != 0) {
+            resDivi = (double) numUno / numDos; // División
+            resFinal = String.format("La Suma de %d y %d es igual a %d.\nLa Resta de %d y %d es igual a %d.\nLa Multiplicación de %d y %d es igual a %d.\nLa División de %d y %d es igual a %.2f.", numUno, numDos, resSuma, numUno, numDos, resRest, numUno, numDos, resMult, numUno, numDos, resDivi);
+        } else {
+            resFinal = String.format("La Suma de %d y %d es igual a %d.\nLa Resta de %d y %d es igual a %d.\nLa Multiplicación de %d y %d es igual a %d.\nNo se puede realizar la división, el segundo número es 0.", numUno, numDos, resSuma, numUno, numDos, resRest, numUno, numDos, resMult);
+        }
+        
+        return resFinal;
+    }
+
+    public static void main(String[] args) {
+        int numeroUno = obtenerNumero("Ingrese el primer número: ");
+        int numeroDos = obtenerNumero("Ingrese el segundo número: ");
+        
+        System.out.println(realizarOperaciones(numeroUno, numeroDos));
+    }
+}
+-
